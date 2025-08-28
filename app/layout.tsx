@@ -1,8 +1,5 @@
 // app/layout.tsx
-import type { Metadata } from "next";
-import Script from "next/script";
-
-export const metadata: Metadata = {
+export const metadata = {
   title: "trainingsplan.at",
   description: "Personalisierte Trainingspläne – schnell & einfach",
 };
@@ -10,7 +7,12 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="de">
-      <body style={{ fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif", color: "#1f2937" }}>
+      <body
+        style={{
+          fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif",
+          color: "#1f2937",
+        }}
+      >
         <div style={{ minHeight: "100dvh", display: "flex", flexDirection: "column" }}>
           {/* Globaler Header */}
           <header style={{ borderBottom: "1px solid #eee", background: "#fff" }}>
@@ -24,7 +26,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 justifyContent: "space-between",
               }}
             >
-              <div style={{ fontWeight: 900, fontSize: 22, letterSpacing: 0.2 }}>trainingsplan.at</div>
+              {/* Logo */}
+              <a href="/" style={{ display: "flex", alignItems: "center" }}>
+                <img
+                  src="/bilder/logo-rot.jpg"
+                  alt="trainingsplan.at Logo"
+                  style={{ height: 50 }} // Höhe anpassen
+                />
+              </a>
+
+              {/* Navigation */}
               <nav style={{ display: "flex", gap: 16 }}>
                 <a href="/" style={{ color: "#2563eb", textDecoration: "none" }}>Start</a>
                 <a href="/impressum" style={{ color: "#2563eb", textDecoration: "none" }}>Impressum</a>
@@ -39,7 +50,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {children}
           </main>
 
-          {/* Globaler Footer */}
+          {/* Footer */}
           <footer style={{ borderTop: "1px solid #eee", background: "#fafafa" }}>
             <div
               style={{
@@ -62,13 +73,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </div>
           </footer>
         </div>
-
-        {/* Umami Analytics */}
-        <Script
-          src="https://cloud.umami.is/script.js"
-          data-website-id="51460c59-9ad2-4d11-b7a3-5f20ee0daf14"
-          strategy="afterInteractive"
-        />
       </body>
     </html>
   );
