@@ -31,7 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <img
                   src="/bilder/logo-rot.jpg"
                   alt="trainingsplan.at Logo"
-                  style={{ height: 60, marginLeft: "120px" }} // Höhe anpassen
+                  style={{ height: 60, marginLeft: "60px" }} // Höhe anpassen
                 />
               </a>
 
