@@ -1,4 +1,6 @@
 // app/layout.tsx
+import Script from "next/script";
+
 export const metadata = {
   title: "trainingsplan.at",
   description: "Personalisierte Trainingspläne – schnell & einfach",
@@ -7,6 +9,15 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="de">
+      <head>
+        {/* Umami Analytics */}
+        <Script
+          src="https://cloud.umami.is/script.js"
+          data-website-id="51460c59-9ad2-4d11-b7a3-5f20ee0daf14"
+          data-domains="trainingsplan.at,www.trainingsplan.at"
+          strategy="afterInteractive"
+        />
+      </head>
       <body
         style={{
           fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif",
