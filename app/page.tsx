@@ -113,8 +113,9 @@ export default function HomePage() {
   return (
     <main className="wrap">
       <h1 className="title">Dein persönlicher Trainingsplan (kostenlos / ohne Registrierung)</h1>
-
-      <form className="card" onSubmit={onSubmit}>
+      <h2>Jetzt sofort mittels KI-Unterstützung erstellen lassen inkl. PDF-Download</h2>
+      
+     <form className="card" onSubmit={onSubmit}>
         {/* Basis */}
         <section className="section">
           <h2>Basis</h2>
